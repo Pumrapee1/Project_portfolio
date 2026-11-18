@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="th">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="พอร์ตโฟลิโอแนะนำตัว ทักษะ และผลงานด้านการพัฒนาเว็บไซต์"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700&family=Prompt:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <title>Portfolio | แนะนำตัวและผลงาน</title>
+  </head>
+  <body>
+    <header class="header">
+      <nav class="nav" aria-label="เมนูหลัก">
+        <a class="nav__logo" href="#home" aria-label="กลับไปหน้าแรก">
+          <span class="nav__logo-mark">P</span>
+          <span class="nav__logo-copy">PORTFOLIO<small>WEB DEVELOPER</small></span>
+        </a>
+
+        <button
+          class="nav__toggle"
+          type="button"
+          aria-label="เปิดเมนู"
+          aria-expanded="false"
+          aria-controls="nav-menu"
+        >
+          <i class="ri-menu-line" aria-hidden="true"></i>
+        </button>
+
+        <div class="nav__menu" id="nav-menu">
+          <p class="nav__caption">สำรวจเว็บไซต์</p>
+          <ul class="nav__list">
+            <li>
+              <a href="#home" class="nav__link active-link">
+                <span class="nav__number">01</span><span>หน้าแรก</span>
+              </a>
+            </li>
+            <li>
+              <a href="#about" class="nav__link">
+                <span class="nav__number">02</span><span>เกี่ยวกับฉัน</span>
+              </a>
+            </li>
+            <li>
+              <a href="#skills" class="nav__link">
+                <span class="nav__number">03</span><span>ทักษะ</span>
+              </a>
+            </li>
+            <li>
+              <a href="#projects" class="nav__link">
+                <span class="nav__number">04</span><span>ผลงาน</span>
+              </a>
+            </li>
+            <li>
+              <a href="#contact" class="nav__link">
+                <span class="nav__number">05</span><span>ติดต่อ</span>
+              </a>
+            </li>
+          </ul>
+
+          <div class="nav__bottom">
+            <button
+              class="theme-toggle"
+              type="button"
+              aria-label="เปิดโหมดมืด"
+              title="สลับธีม"
+            >
+              <i class="ri-moon-line" aria-hidden="true"></i>
+              <span>สลับธีม</span>
+            </button>
+            <p class="nav__scroll-hint">เลื่อนลงเพื่อสำรวจ <span>↓</span></p>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="page-main">
+      <section class="hero section" id="home">
+        <div class="hero__container container">
+          <div class="hero__topline">
+            <span>พอร์ตโฟลิโอ / นักพัฒนาเว็บไซต์</span>
+            <span>01 — 05</span>
+          </div>
+
+          <div class="hero__layout">
+            <div class="hero__content">
+              <p class="eyebrow"><span class="status-dot"></span> ยินดีต้อนรับ</p>
+              <h1 class="hero__title">
+                เปลี่ยนไอเดีย<br />
+                ให้เป็น<span class="hero__title-accent">ดิจิทัล</span>
+              </h1>
+              <p class="hero__role-line">
+                สวัสดี, ฉันคือ <span
+                  class="text-accent typing-cursor"
+                  id="typed-role"
+                  data-roles="นักศึกษา ปวส.1|นักพัฒนาเว็บไซต์|ผู้สร้างเว็บแอป"
+                >นักพัฒนาเว็บไซต์</span>
+              </p>
+              <p class="hero__description">
+                สนใจการพัฒนาเว็บแอปพลิเคชันและการสร้างประสบการณ์ใช้งานที่เรียบง่าย
+                โดยใช้เทคโนโลยีเว็บสมัยใหม่
+              </p>
+              <div class="hero__buttons">
+                <a href="#projects" class="button">
+                  ดูผลงาน <i class="ri-arrow-down-right-line" aria-hidden="true"></i>
+                </a>
+                <a href="#contact" class="button button--ghost">มาคุยกัน</a>
+              </div>
+              <div class="hero__social" aria-label="ช่องทางออนไลน์">
+                <a href="#contact" aria-label="GitHub">
+                  <i class="ri-github-fill" aria-hidden="true"></i>
+                </a>
+                <a href="#contact" aria-label="เว็บไซต์">
+                  <i class="ri-global-line" aria-hidden="true"></i>
+                </a>
+                <span>ติดตาม / ติดต่อ</span>
+              </div>
+            </div>
+
+            <figure class="hero__image-wrap">
+              <span class="hero__image-index">P—01</span>
+              <img
+                class="hero__image"
+                src="Girl.webp"
+                alt="ภาพประกอบนักพัฒนาเว็บไซต์"
+              />
+              <figcaption class="hero__image-caption">
+                <span>ออกแบบ · พัฒนา · เรียนรู้</span>
+                <span aria-hidden="true">↗</span>
+              </figcaption>
+              <span class="hero__image-mark" aria-hidden="true">P.</span>
+            </figure>
+          </div>
+
+          <a class="hero__scroll" href="#about">
+            <span class="hero__scroll-line" aria-hidden="true"></span>
+            เลื่อนเพื่อสำรวจ
+          </a>
+        </div>
+      </section>
+
+      <section class="section about-section" id="about">
+        <div class="container section-layout">
+          <div class="section-heading">
+            <p class="section-heading__index">02 / เกี่ยวกับ</p>
+            <h2 class="section__title">เบื้องหลัง<br />หน้าจอ</h2>
+            <span class="section-heading__line" aria-hidden="true"></span>
+          </div>
+          <div class="about__content">
+            <p class="about__lead">
+              ฉันสนใจการพัฒนาเว็บไซต์และแอปพลิเคชัน ตั้งแต่การออกแบบหน้าตา
+              ไปจนถึงการทำงานร่วมกับฐานข้อมูล
+            </p>
+            <p>
+              กำลังพัฒนาทักษะด้านเทคโนโลยีเว็บอย่างต่อเนื่อง
+              และสนใจสร้างประสบการณ์ใช้งานที่เรียบง่ายด้วยเทคโนโลยีสมัยใหม่
+            </p>
+            <p>
+              เทคโนโลยีที่ศึกษาและสนใจ ได้แก่ React, JavaScript, MongoDB,
+              React Native, Angular และ SQL
+            </p>
+
+            <div class="about__education">
+              <span class="about__education-icon">
+                <i class="ri-graduation-cap-line" aria-hidden="true"></i>
+              </span>
+              <div>
+                <span class="about__education-label">กำลังศึกษา</span>
+                <strong>ประกาศนียบัตรวิชาชีพชั้นสูง (ปวส.) · ชั้นปีที่ 1</strong>
+                <span>สาขาเทคโนโลยีสารสนเทศ</span>
+                <span>วิทยาลัยเทคโนโลยีพายัพและบริหารธุรกิจ</span>
+              </div>
+            </div>
+
+            <div class="about__facts">
+              <div class="about__fact">
+                <span class="about__fact-index">A</span>
+                <div>
+                  <strong>ความสนใจ</strong>
+                  <span>Web Development</span>
+                </div>
+              </div>
+              <div class="about__fact">
+                <span class="about__fact-index">B</span>
+                <div>
+                  <strong>เทคโนโลยี</strong>
+                  <span>Frontend และฐานข้อมูล</span>
+                </div>
+              </div>
+              <div class="about__fact">
+                <span class="about__fact-index">C</span>
+                <div>
+                  <strong>เป้าหมาย</strong>
+                  <span>เรียนรู้และสร้างผลงานใหม่</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section skills-section" id="skills">
+        <div class="container">
+          <div class="section-heading section-heading--wide">
+            <div>
+              <p class="section-heading__index">03 / เครื่องมือ</p>
+              <h2 class="section__title">ทักษะที่กำลังพัฒนา</h2>
+            </div>
+            <p class="section-heading__aside">
+              เทคโนโลยีที่ศึกษาและสนใจ<br />แสดงระดับตามข้อมูลเดิม
+            </p>
+          </div>
+
+          <div class="skills__grid">
+            <article class="skill-card">
+              <div class="skill-card__head">
+                <span class="skill-card__icon"><i class="ri-reactjs-line" aria-hidden="true"></i></span>
+                <span class="skill-card__index">01</span>
+              </div>
+              <div class="skill-card__info"><h3>React.js</h3><span>97%</span></div>
+              <div class="skill-card__bar" role="img" aria-label="ระดับ 97%">
+                <span style="--level: 97%"></span>
+              </div>
+            </article>
+            <article class="skill-card">
+              <div class="skill-card__head">
+                <span class="skill-card__icon"><i class="ri-javascript-line" aria-hidden="true"></i></span>
+                <span class="skill-card__index">02</span>
+              </div>
+              <div class="skill-card__info"><h3>JavaScript</h3><span>85%</span></div>
+              <div class="skill-card__bar" role="img" aria-label="ระดับ 85%">
+                <span style="--level: 85%"></span>
+              </div>
+            </article>
+            <article class="skill-card">
+              <div class="skill-card__head">
+                <span class="skill-card__icon"><i class="ri-database-2-line" aria-hidden="true"></i></span>
+                <span class="skill-card__index">03</span>
+              </div>
+              <div class="skill-card__info"><h3>MongoDB</h3><span>85%</span></div>
+              <div class="skill-card__bar" role="img" aria-label="ระดับ 85%">
+                <span style="--level: 85%"></span>
+              </div>
+            </article>
+            <article class="skill-card">
+              <div class="skill-card__head">
+                <span class="skill-card__icon"><i class="ri-smartphone-line" aria-hidden="true"></i></span>
+                <span class="skill-card__index">04</span>
+              </div>
+              <div class="skill-card__info"><h3>React Native</h3><span>89%</span></div>
+              <div class="skill-card__bar" role="img" aria-label="ระดับ 89%">
+                <span style="--level: 89%"></span>
+              </div>
+            </article>
+            <article class="skill-card">
+              <div class="skill-card__head">
+                <span class="skill-card__icon"><i class="ri-angularjs-fill" aria-hidden="true"></i></span>
+                <span class="skill-card__index">05</span>
+              </div>
+              <div class="skill-card__info"><h3>Angular</h3><span>89%</span></div>
+              <div class="skill-card__bar" role="img" aria-label="ระดับ 89%">
+                <span style="--level: 89%"></span>
+              </div>
+            </article>
+            <article class="skill-card">
+              <div class="skill-card__head">
+                <span class="skill-card__icon"><i class="ri-database-line" aria-hidden="true"></i></span>
+                <span class="skill-card__index">06</span>
+              </div>
+              <div class="skill-card__info"><h3>SQL</h3><span>89%</span></div>
+              <div class="skill-card__bar" role="img" aria-label="ระดับ 89%">
+                <span style="--level: 89%"></span>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section projects-section" id="projects">
+        <div class="container">
+          <div class="section-heading section-heading--wide">
+            <div>
+              <p class="section-heading__index">04 / สิ่งที่สร้าง</p>
+              <h2 class="section__title">พื้นที่แสดงผลงาน</h2>
+            </div>
+            <p class="section-heading__aside">
+              เพิ่มรายละเอียดจริง รูปภาพ<br />และลิงก์ของแต่ละโปรเจกต์ได้ที่นี่
+            </p>
+          </div>
+
+          <div class="projects__list">
+            <article class="project-card">
+              <span class="project-card__number">01</span>
+              <div class="project-card__visual">
+                <i class="ri-code-s-slash-line" aria-hidden="true"></i>
+              </div>
+              <div class="project-card__body">
+                <p class="project-card__type">WEB APP / FRONTEND</p>
+                <h3>ผลงานเว็บไซต์</h3>
+                <p>เพิ่มภาพ รายละเอียด และลิงก์ของเว็บไซต์ที่ต้องการนำเสนอ</p>
+                <span class="tag">Web App</span>
+              </div>
+              <span class="project-card__arrow" aria-hidden="true">↗</span>
+            </article>
+            <article class="project-card">
+              <span class="project-card__number">02</span>
+              <div class="project-card__visual project-card__visual--blue">
+                <i class="ri-database-2-line" aria-hidden="true"></i>
+              </div>
+              <div class="project-card__body">
+                <p class="project-card__type">DATABASE / API</p>
+                <h3>ผลงานฐานข้อมูล</h3>
+                <p>เพิ่มรายละเอียดโปรเจกต์ที่เกี่ยวข้องกับฐานข้อมูลหรือ API</p>
+                <span class="tag">Database</span>
+              </div>
+              <span class="project-card__arrow" aria-hidden="true">↗</span>
+            </article>
+            <article class="project-card">
+              <span class="project-card__number">03</span>
+              <div class="project-card__visual project-card__visual--gold">
+                <i class="ri-smartphone-line" aria-hidden="true"></i>
+              </div>
+              <div class="project-card__body">
+                <p class="project-card__type">MOBILE / APPLICATION</p>
+                <h3>ผลงานแอปพลิเคชัน</h3>
+                <p>เพิ่มภาพและรายละเอียดแอปพลิเคชันที่ต้องการแสดง</p>
+                <span class="tag">Application</span>
+              </div>
+              <span class="project-card__arrow" aria-hidden="true">↗</span>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section contact-section" id="contact">
+        <div class="container">
+          <div class="section-heading section-heading--wide">
+            <div>
+              <p class="section-heading__index">05 / ติดต่อ</p>
+              <h2 class="section__title">มีไอเดีย<br />มาคุยกัน</h2>
+            </div>
+            <p class="section-heading__aside">
+              แก้ไขข้อมูลติดต่อและลิงก์<br />ให้เป็นของคุณก่อนเผยแพร่เว็บไซต์
+            </p>
+          </div>
+
+          <div class="contact__layout">
+            <div class="contact__intro">
+              <span class="contact__kicker">OPEN TO CONNECTIONS</span>
+              <p>
+                สนใจพูดคุย แลกเปลี่ยนไอเดีย
+                หรือร่วมสร้างผลงานด้านเทคโนโลยี
+              </p>
+              <span class="contact__orbit" aria-hidden="true">↗</span>
+            </div>
+
+            <div class="contact__channels">
+              <div class="contact__channel">
+                <span class="contact__channel-index">01</span>
+                <span class="contact__channel-icon">
+                  <i class="ri-mail-line" aria-hidden="true"></i>
+                </span>
+                <div>
+                  <span class="contact__channel-label">EMAIL</span>
+                  <h3>อีเมล</h3>
+                  <p>เพิ่มอีเมลสำหรับติดต่อ</p>
+                </div>
+                <span class="contact__channel-arrow" aria-hidden="true">↗</span>
+              </div>
+              <div class="contact__channel">
+                <span class="contact__channel-index">02</span>
+                <span class="contact__channel-icon">
+                  <i class="ri-github-fill" aria-hidden="true"></i>
+                </span>
+                <div>
+                  <span class="contact__channel-label">GITHUB</span>
+                  <h3>GitHub</h3>
+                  <p>เพิ่มลิงก์โปรไฟล์ GitHub</p>
+                </div>
+                <span class="contact__channel-arrow" aria-hidden="true">↗</span>
+              </div>
+              <p class="contact__note">
+                ใส่ข้อมูลติดต่อจริงในส่วนนี้ได้เมื่อพร้อมเผยแพร่เว็บไซต์
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container footer__content">
+        <a class="nav__logo" href="#home">
+          <span class="nav__logo-mark">P</span>
+          <span class="nav__logo-copy">PORTFOLIO<small>WEB DEVELOPER</small></span>
+        </a>
+        <p>พอร์ตโฟลิโอแนะนำตัว · ทักษะ · ผลงาน</p>
+        <a class="footer__top" href="#home">กลับไปด้านบน <i class="ri-arrow-up-line" aria-hidden="true"></i></a>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
