@@ -420,13 +420,6 @@ img {
   padding: 1rem 1rem 0;
 }
 
-.hero__image-wrap > .image-upload {
-  position: absolute;
-  z-index: 3;
-  bottom: 2rem;
-  left: 1rem;
-}
-
 .hero__image {
   width: 100%;
   aspect-ratio: 0.78;

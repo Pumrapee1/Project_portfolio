@@ -126,26 +126,6 @@ const optimizeImage = (file, onReady) => {
   reader.readAsDataURL(file);
 };
 
-const profileImage = document.querySelector(".hero__image");
-const profileImageUpload = document.querySelector("#profile-image-upload");
-const savedProfileImage = localStorage.getItem("portfolio-profile-image");
-if (savedProfileImage) {
-  profileImage.src = savedProfileImage;
-}
-
-profileImageUpload.addEventListener("change", () => {
-  const [file] = profileImageUpload.files;
-  if (!file) return;
-
-  optimizeImage(file, (dataUrl) => {
-    profileImage.src = dataUrl;
-    if (storeValue("portfolio-profile-image", dataUrl)) {
-      showFeedback("เปลี่ยนรูปโปรไฟล์แล้ว");
-    }
-  });
-  profileImageUpload.value = "";
-});
-
 document.querySelectorAll(".project-card").forEach((card) => {
   const projectId = card.dataset.project;
   const image = card.querySelector(".project-card__image");
