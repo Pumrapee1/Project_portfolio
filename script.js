@@ -1,7 +1,29 @@
 const menu = document.querySelector("#nav-menu");
 const menuToggle = document.querySelector(".nav__toggle");
 const themeToggle = document.querySelector(".theme-toggle");
-const typedRole = document.querySelector("#typed-role");
+const siteFeedback = document.querySelector("#site-feedback");
+
+let feedbackTimer;
+
+const showFeedback = (message, isError = false) => {
+  siteFeedback.textContent = message;
+  siteFeedback.classList.toggle("site-feedback--error", isError);
+  siteFeedback.classList.add("site-feedback--visible");
+  window.clearTimeout(feedbackTimer);
+  feedbackTimer = window.setTimeout(() => {
+    siteFeedback.classList.remove("site-feedback--visible");
+  }, 2800);
+};
+
+const storeValue = (key, value) => {
+  try {
+    localStorage.setItem(key, value);
+    return true;
+  } catch {
+    showFeedback("บันทึกข้อมูลไม่สำเร็จ พื้นที่จัดเก็บของเบราว์เซอร์อาจเต็ม", true);
+    return false;
+  }
+};
 
 const setTheme = (isDark) => {
   document.body.classList.toggle("dark-theme", isDark);
@@ -63,45 +85,142 @@ const prefersReducedMotion = window.matchMedia(
   "(prefers-reduced-motion: reduce)",
 ).matches;
 
-if (typedRole) {
-  const roles = typedRole.dataset.roles.split("|");
-  const graphemeSegmenter =
-    typeof Intl.Segmenter === "function"
-      ? new Intl.Segmenter("th", { granularity: "grapheme" })
-      : null;
+const setUploadedImage = (image, icon, dataUrl) => {
+  image.src = dataUrl;
+  image.hidden = false;
+  image.dataset.savedImage = dataUrl;
+  icon.hidden = true;
+};
 
-  if (prefersReducedMotion || !graphemeSegmenter) {
-    typedRole.textContent = roles[0];
-  } else {
-    const roleParts = roles.map((role) =>
-      Array.from(graphemeSegmenter.segment(role), ({ segment }) => segment),
-    );
-    let roleIndex = 0;
-    let characterIndex = roleParts[0].length;
-    let deleting = false;
-
-    const typeRole = () => {
-      const currentRole = roleParts[roleIndex];
-      typedRole.textContent = currentRole.slice(0, characterIndex).join("");
-      let delay = deleting ? 55 : 95;
-
-      if (!deleting && characterIndex === currentRole.length) {
-        deleting = true;
-        delay = 1400;
-      } else if (deleting && characterIndex === 0) {
-        deleting = false;
-        roleIndex = (roleIndex + 1) % roles.length;
-        delay = 350;
-      } else {
-        characterIndex += deleting ? -1 : 1;
-      }
-
-      window.setTimeout(typeRole, delay);
-    };
-
-    window.setTimeout(typeRole, 1400);
+const optimizeImage = (file, onReady) => {
+  if (!file.type.startsWith("image/")) {
+    showFeedback("กรุณาเลือกไฟล์รูปภาพ", true);
+    return;
   }
+  if (file.size > 8 * 1024 * 1024) {
+    showFeedback("ไฟล์รูปมีขนาดใหญ่เกินไป (สูงสุด 8 MB)", true);
+    return;
+  }
+
+  const reader = new FileReader();
+  reader.onerror = () => showFeedback("อ่านไฟล์รูปไม่สำเร็จ กรุณาลองอีกครั้ง", true);
+  reader.onload = () => {
+    const source = new Image();
+    source.onerror = () => showFeedback("เปิดไฟล์รูปไม่สำเร็จ กรุณาเลือกไฟล์อื่น", true);
+    source.onload = () => {
+      const scale = Math.min(1, 1400 / Math.max(source.naturalWidth, source.naturalHeight));
+      const canvas = document.createElement("canvas");
+      canvas.width = Math.round(source.naturalWidth * scale);
+      canvas.height = Math.round(source.naturalHeight * scale);
+      canvas.getContext("2d").drawImage(source, 0, 0, canvas.width, canvas.height);
+      const dataUrl = canvas.toDataURL("image/webp", 0.8);
+
+      if (dataUrl.length > 2_000_000) {
+        showFeedback("รูปหลังปรับขนาดยังใหญ่เกินไป กรุณาเลือกไฟล์ที่เล็กลง", true);
+        return;
+      }
+      onReady(dataUrl);
+    };
+    source.src = reader.result;
+  };
+  reader.readAsDataURL(file);
+};
+
+const profileImage = document.querySelector(".hero__image");
+const profileImageUpload = document.querySelector("#profile-image-upload");
+const savedProfileImage = localStorage.getItem("portfolio-profile-image");
+if (savedProfileImage) {
+  profileImage.src = savedProfileImage;
 }
+
+profileImageUpload.addEventListener("change", () => {
+  const [file] = profileImageUpload.files;
+  if (!file) return;
+
+  optimizeImage(file, (dataUrl) => {
+    profileImage.src = dataUrl;
+    if (storeValue("portfolio-profile-image", dataUrl)) {
+      showFeedback("เปลี่ยนรูปโปรไฟล์แล้ว");
+    }
+  });
+  profileImageUpload.value = "";
+});
+
+document.querySelectorAll(".project-card").forEach((card) => {
+  const projectId = card.dataset.project;
+  const image = card.querySelector(".project-card__image");
+  const icon = card.querySelector(".project-card__visual > i");
+  const fields = card.querySelectorAll("[contenteditable='true']");
+  const storageKey = `portfolio-project-${projectId}`;
+  let savedProject;
+
+  try {
+    savedProject = JSON.parse(localStorage.getItem(storageKey) || "null");
+  } catch {
+    showFeedback(`ไม่สามารถอ่านข้อมูลผลงาน ${projectId} ที่บันทึกไว้ได้`, true);
+  }
+
+  if (savedProject && typeof savedProject === "object") {
+    if (Array.isArray(savedProject.text)) {
+      fields.forEach((field, index) => {
+        if (typeof savedProject.text[index] === "string") {
+          field.textContent = savedProject.text[index];
+        }
+      });
+    }
+    if (typeof savedProject.image === "string" && savedProject.image) {
+      setUploadedImage(image, icon, savedProject.image);
+    }
+  }
+
+  const saveProject = () => {
+    const projectData = {
+      text: Array.from(fields, (field) => field.textContent),
+      image: image.dataset.savedImage || "",
+    };
+    return storeValue(storageKey, JSON.stringify(projectData));
+  };
+
+  fields.forEach((field) => field.addEventListener("input", saveProject));
+  card.querySelector(".project-image-upload").addEventListener("change", (event) => {
+    const [file] = event.target.files;
+    if (!file) return;
+
+    optimizeImage(file, (dataUrl) => {
+      setUploadedImage(image, icon, dataUrl);
+      if (saveProject()) {
+        showFeedback("เพิ่มรูปผลงานแล้ว");
+      }
+    });
+    event.target.value = "";
+  });
+});
+
+const emailButton = document.querySelector("[data-copy-email]");
+emailButton.addEventListener("click", async () => {
+  const email = emailButton.dataset.copyEmail;
+  try {
+    await navigator.clipboard.writeText(email);
+  } catch {
+    const temporaryInput = document.createElement("textarea");
+    temporaryInput.value = email;
+    temporaryInput.setAttribute("readonly", "");
+    temporaryInput.style.position = "fixed";
+    temporaryInput.style.opacity = "0";
+    document.body.append(temporaryInput);
+    temporaryInput.select();
+    const copied = document.execCommand("copy");
+    temporaryInput.remove();
+    if (!copied) {
+      showFeedback("คัดลอกอีเมลไม่สำเร็จ กรุณาคัดลอกด้วยตนเอง", true);
+      return;
+    }
+  }
+
+  emailButton.classList.add("is-copied");
+  showFeedback("คัดลอกอีเมลแล้ว");
+  window.setTimeout(() => emailButton.classList.remove("is-copied"), 1800);
+});
 
 if (!prefersReducedMotion && "IntersectionObserver" in window) {
   const revealElements = document.querySelectorAll(

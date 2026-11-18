@@ -420,6 +420,13 @@ img {
   padding: 1rem 1rem 0;
 }
 
+.hero__image-wrap > .image-upload {
+  position: absolute;
+  z-index: 3;
+  bottom: 2rem;
+  left: 1rem;
+}
+
 .hero__image {
   width: 100%;
   aspect-ratio: 0.78;
@@ -702,6 +709,14 @@ img {
   font-size: 0.75rem;
 }
 
+.skill-card__description {
+  grid-column: 2;
+  margin-top: 0.35rem;
+  color: var(--muted);
+  font-size: 0.8rem;
+  line-height: 1.7;
+}
+
 .skill-card__bar {
   height: 3px;
   grid-column: 2;
@@ -754,9 +769,11 @@ img {
 }
 
 .project-card__visual {
+  position: relative;
   display: grid;
   width: 150px;
   height: 112px;
+  overflow: hidden;
   place-items: center;
   color: var(--accent-strong);
   background:
@@ -764,6 +781,25 @@ img {
     var(--soft-surface);
   font-size: 2rem;
   transition: color 0.2s ease, background-color 0.2s ease, transform 0.25s ease;
+}
+
+.project-card__image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.project-card__image[hidden] {
+  display: none;
+}
+
+.project-card__upload {
+  position: absolute;
+  z-index: 1;
+  right: 0.4rem;
+  bottom: 0.4rem;
 }
 
 .project-card:hover .project-card__visual {
@@ -802,6 +838,16 @@ img {
 .project-card__body > p:not(.project-card__type) {
   color: var(--muted);
   font-size: 0.85rem;
+}
+
+.project-card [contenteditable="true"] {
+  outline: 1px dashed transparent;
+  outline-offset: 3px;
+  transition: outline-color 0.2s ease;
+}
+
+.project-card [contenteditable="true"]:focus {
+  outline-color: var(--accent-strong);
 }
 
 .tag {
@@ -906,6 +952,12 @@ img {
   gap: 0.9rem;
   padding: 1.25rem 0.75rem;
   border-top: 1px solid color-mix(in srgb, var(--contrast-text) 20%, transparent);
+  color: inherit;
+  font: inherit;
+  text-align: left;
+  text-decoration: none;
+  background: transparent;
+  cursor: pointer;
   transition: background-color 0.2s ease;
 }
 
@@ -962,6 +1014,72 @@ img {
   margin-top: 1rem;
   padding-left: 0.75rem;
   border-left: 2px solid var(--accent);
+}
+
+.contact__channel--button {
+  width: 100%;
+}
+
+.contact__channel--button.is-copied .contact__channel-arrow {
+  color: #8fe0aa;
+  transform: scale(1.15);
+}
+
+.image-upload {
+  display: inline-flex;
+  min-height: 2rem;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.35rem 0.55rem;
+  border: 1px solid var(--line);
+  color: var(--text);
+  background: var(--surface);
+  cursor: pointer;
+  font-size: 0.68rem;
+  font-weight: 500;
+  transition: color 0.2s ease, background-color 0.2s ease;
+}
+
+.image-upload:hover {
+  color: var(--contrast);
+  background: var(--accent);
+}
+
+.image-upload input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  clip-path: inset(50%);
+}
+
+.site-feedback {
+  position: fixed;
+  z-index: 20;
+  right: 1.25rem;
+  bottom: 1.25rem;
+  max-width: min(90vw, 26rem);
+  padding: 0.8rem 1rem;
+  color: var(--contrast-text);
+  background: var(--contrast);
+  box-shadow: var(--shadow);
+  font-size: 0.85rem;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(0.5rem);
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.site-feedback--visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.site-feedback--error {
+  color: #fff;
+  background: #9c2c2c;
 }
 
 .footer {
@@ -1220,17 +1338,6 @@ img {
 
   .about__facts {
     grid-template-columns: 1fr;
-  }
-
-  .about__fact {
-    min-height: auto;
-    padding: 0.9rem 0;
-  }
-
-  .about__fact + .about__fact {
-    padding-left: 0;
-    border-top: 1px solid var(--line);
-    border-left: 0;
   }
 
   .skills__grid {

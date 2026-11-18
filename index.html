@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="พอร์ตโฟลิโอแนะนำตัว ทักษะ และผลงานด้านการพัฒนาเว็บไซต์"
+      content="Portfolio Pumrapee แนะนำตัว ทักษะ ผลงาน และรางวัล"
     />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -18,14 +18,14 @@
       href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css"
       rel="stylesheet"
     />
-    <title>Portfolio | แนะนำตัวและผลงาน</title>
+    <title>Portfolio | Pumrapee</title>
   </head>
   <body>
     <header class="header">
       <nav class="nav" aria-label="เมนูหลัก">
         <a class="nav__logo" href="#home" aria-label="กลับไปหน้าแรก">
           <span class="nav__logo-mark">P</span>
-          <span class="nav__logo-copy">PORTFOLIO<small>WEB DEVELOPER</small></span>
+          <span class="nav__logo-copy">PORTFOLIO<small>PUMRAPEE</small></span>
         </a>
 
         <button
@@ -48,7 +48,7 @@
             </li>
             <li>
               <a href="#about" class="nav__link">
-                <span class="nav__number">02</span><span>เกี่ยวกับฉัน</span>
+                <span class="nav__number">02</span><span>แนะนำตัว</span>
               </a>
             </li>
             <li>
@@ -88,7 +88,7 @@
       <section class="hero section" id="home">
         <div class="hero__container container">
           <div class="hero__topline">
-            <span>พอร์ตโฟลิโอ / นักพัฒนาเว็บไซต์</span>
+            <span>PORTFOLIO / PUMRAPEE</span>
             <span>01 — 05</span>
           </div>
 
@@ -96,34 +96,30 @@
             <div class="hero__content">
               <p class="eyebrow"><span class="status-dot"></span> ยินดีต้อนรับ</p>
               <h1 class="hero__title">
-                เปลี่ยนไอเดีย<br />
-                ให้เป็น<span class="hero__title-accent">ดิจิทัล</span>
+                Portfolio<br />
+                <span class="hero__title-accent">Pumrapee</span>
               </h1>
               <p class="hero__role-line">
-                สวัสดี, ฉันคือ <span
-                  class="text-accent typing-cursor"
-                  id="typed-role"
-                  data-roles="นักศึกษา ปวส.1|นักพัฒนาเว็บไซต์|ผู้สร้างเว็บแอป"
-                >นักพัฒนาเว็บไซต์</span>
+                สวัสดี ฉันชื่อ <span class="text-accent">ภูมิรพี</span>
               </p>
               <p class="hero__description">
-                สนใจการพัฒนาเว็บแอปพลิเคชันและการสร้างประสบการณ์ใช้งานที่เรียบง่าย
-                โดยใช้เทคโนโลยีเว็บสมัยใหม่
+                แนวทางการพัฒนาตนเองของฉันคือเรียนรู้พื้นฐานให้เข้าใจ
+                ลงมือฝึกฝนจากการทำงานจริง และนำข้อเสนอแนะมาปรับปรุงผลงานอยู่เสมอ
               </p>
               <div class="hero__buttons">
                 <a href="#projects" class="button">
                   ดูผลงาน <i class="ri-arrow-down-right-line" aria-hidden="true"></i>
                 </a>
-                <a href="#contact" class="button button--ghost">มาคุยกัน</a>
+                <a href="#contact" class="button button--ghost">ติดต่อฉัน</a>
               </div>
               <div class="hero__social" aria-label="ช่องทางออนไลน์">
-                <a href="#contact" aria-label="GitHub">
+                <a href="https://github.com/Pumrapee1" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
                   <i class="ri-github-fill" aria-hidden="true"></i>
                 </a>
-                <a href="#contact" aria-label="เว็บไซต์">
-                  <i class="ri-global-line" aria-hidden="true"></i>
+                <a href="https://www.facebook.com/phoomrapee.wichayapatanakun" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+                  <i class="ri-facebook-fill" aria-hidden="true"></i>
                 </a>
-                <span>ติดตาม / ติดต่อ</span>
+                <span>GitHub / Facebook</span>
               </div>
             </div>
 
@@ -131,9 +127,14 @@
               <span class="hero__image-index">P—01</span>
               <img
                 class="hero__image"
-                src="Girl.webp"
-                alt="ภาพประกอบนักพัฒนาเว็บไซต์"
+                src="profile.jpg"
+                alt="รูปโปรไฟล์ของภูมิรพี"
               />
+              <label class="image-upload">
+                <i class="ri-image-add-line" aria-hidden="true"></i>
+                เปลี่ยนรูปโปรไฟล์
+                <input id="profile-image-upload" type="file" accept="image/*" />
+              </label>
               <figcaption class="hero__image-caption">
                 <span>ออกแบบ · พัฒนา · เรียนรู้</span>
                 <span aria-hidden="true">↗</span>
@@ -152,22 +153,22 @@
       <section class="section about-section" id="about">
         <div class="container section-layout">
           <div class="section-heading">
-            <p class="section-heading__index">02 / เกี่ยวกับ</p>
-            <h2 class="section__title">เบื้องหลัง<br />หน้าจอ</h2>
+            <p class="section-heading__index">02 / แนะนำตัว</p>
+            <h2 class="section__title">แนะนำ<br />ตัวเอง</h2>
             <span class="section-heading__line" aria-hidden="true"></span>
           </div>
           <div class="about__content">
             <p class="about__lead">
-              ฉันสนใจการพัฒนาเว็บไซต์และแอปพลิเคชัน ตั้งแต่การออกแบบหน้าตา
-              ไปจนถึงการทำงานร่วมกับฐานข้อมูล
+              สวัสดี ฉันชื่อภูมิรพี เป็นนักศึกษาสาขาเทคโนโลยีสารสนเทศ
+              ที่สนใจเรียนรู้และพัฒนาทักษะด้านเทคโนโลยี
             </p>
             <p>
-              กำลังพัฒนาทักษะด้านเทคโนโลยีเว็บอย่างต่อเนื่อง
-              และสนใจสร้างประสบการณ์ใช้งานที่เรียบง่ายด้วยเทคโนโลยีสมัยใหม่
+              ฉันเชื่อในการพัฒนาตนเองอย่างต่อเนื่อง เริ่มจากทำความเข้าใจพื้นฐาน
+              ฝึกลงมือทำ และเรียนรู้จากข้อผิดพลาดเพื่อให้ทำสิ่งต่าง ๆ ได้ดีขึ้น
             </p>
             <p>
-              เทคโนโลยีที่ศึกษาและสนใจ ได้แก่ React, JavaScript, MongoDB,
-              React Native, Angular และ SQL
+              เป้าหมายของฉันคือเพิ่มพูนความรู้ ความคิดสร้างสรรค์
+              และทักษะการทำงานร่วมกับผู้อื่น พร้อมนำสิ่งที่เรียนรู้ไปสร้างผลงานที่มีประโยชน์
             </p>
 
             <div class="about__education">
@@ -182,29 +183,6 @@
               </div>
             </div>
 
-            <div class="about__facts">
-              <div class="about__fact">
-                <span class="about__fact-index">A</span>
-                <div>
-                  <strong>ความสนใจ</strong>
-                  <span>Web Development</span>
-                </div>
-              </div>
-              <div class="about__fact">
-                <span class="about__fact-index">B</span>
-                <div>
-                  <strong>เทคโนโลยี</strong>
-                  <span>Frontend และฐานข้อมูล</span>
-                </div>
-              </div>
-              <div class="about__fact">
-                <span class="about__fact-index">C</span>
-                <div>
-                  <strong>เป้าหมาย</strong>
-                  <span>เรียนรู้และสร้างผลงานใหม่</span>
-                </div>
-              </div>
-            </div>
           </div>
         </div>
       </section>
@@ -213,74 +191,62 @@
         <div class="container">
           <div class="section-heading section-heading--wide">
             <div>
-              <p class="section-heading__index">03 / เครื่องมือ</p>
+              <p class="section-heading__index">03 / พัฒนาตนเอง</p>
               <h2 class="section__title">ทักษะที่กำลังพัฒนา</h2>
             </div>
             <p class="section-heading__aside">
-              เทคโนโลยีที่ศึกษาและสนใจ<br />แสดงระดับตามข้อมูลเดิม
+              ความสามารถและจุดแข็ง<br />ที่ฝึกฝนและนำไปใช้จริง
             </p>
           </div>
 
           <div class="skills__grid">
             <article class="skill-card">
               <div class="skill-card__head">
-                <span class="skill-card__icon"><i class="ri-reactjs-line" aria-hidden="true"></i></span>
+                <span class="skill-card__icon"><i class="ri-database-2-line" aria-hidden="true"></i></span>
                 <span class="skill-card__index">01</span>
               </div>
-              <div class="skill-card__info"><h3>React.js</h3><span>97%</span></div>
-              <div class="skill-card__bar" role="img" aria-label="ระดับ 97%">
-                <span style="--level: 97%"></span>
-              </div>
+              <div class="skill-card__info"><h3>SQL</h3><span>ระดับกลาง</span></div>
+              <p class="skill-card__description">ใช้คำสั่ง SELECT, WHERE, ORDER BY, JOIN และ GROUP BY เพื่อค้นหา กรอง และสรุปข้อมูล รวมถึงเข้าใจการเพิ่ม แก้ไข และลบข้อมูลเบื้องต้น</p>
             </article>
             <article class="skill-card">
               <div class="skill-card__head">
-                <span class="skill-card__icon"><i class="ri-javascript-line" aria-hidden="true"></i></span>
+                <span class="skill-card__icon"><i class="ri-code-s-slash-line" aria-hidden="true"></i></span>
                 <span class="skill-card__index">02</span>
               </div>
-              <div class="skill-card__info"><h3>JavaScript</h3><span>85%</span></div>
-              <div class="skill-card__bar" role="img" aria-label="ระดับ 85%">
-                <span style="--level: 85%"></span>
-              </div>
+              <div class="skill-card__info"><h3>Python</h3><span>ระดับกลาง</span></div>
+              <p class="skill-card__description">มีพื้นฐานตัวแปร ชนิดข้อมูล เงื่อนไข ลูป ฟังก์ชัน และโครงสร้างข้อมูล สามารถนำมาวางโครงสร้างและพัฒนาโปรแกรมเบื้องต้นได้</p>
             </article>
             <article class="skill-card">
               <div class="skill-card__head">
-                <span class="skill-card__icon"><i class="ri-database-2-line" aria-hidden="true"></i></span>
+                <span class="skill-card__icon"><i class="ri-palette-line" aria-hidden="true"></i></span>
                 <span class="skill-card__index">03</span>
               </div>
-              <div class="skill-card__info"><h3>MongoDB</h3><span>85%</span></div>
-              <div class="skill-card__bar" role="img" aria-label="ระดับ 85%">
-                <span style="--level: 85%"></span>
-              </div>
+              <div class="skill-card__info"><h3>ดีไซน์ UX/UI</h3><span>ระดับสูง</span></div>
+              <p class="skill-card__description">ออกแบบโปสเตอร์และงานกราฟิกได้ พร้อมคำนึงถึงการจัดวาง สี และความชัดเจน เพื่อให้สื่อสารกับผู้ชมได้ดี</p>
             </article>
             <article class="skill-card">
               <div class="skill-card__head">
-                <span class="skill-card__icon"><i class="ri-smartphone-line" aria-hidden="true"></i></span>
+                <span class="skill-card__icon"><i class="ri-chat-voice-line" aria-hidden="true"></i></span>
                 <span class="skill-card__index">04</span>
               </div>
-              <div class="skill-card__info"><h3>React Native</h3><span>89%</span></div>
-              <div class="skill-card__bar" role="img" aria-label="ระดับ 89%">
-                <span style="--level: 89%"></span>
-              </div>
+              <div class="skill-card__info"><h3>ทักษะการพูด</h3><span>ระดับสูง</span></div>
+              <p class="skill-card__description">กล้าพูด กล้าแสดงความคิดเห็น และสื่อสารหรือนำเสนอความคิดต่อหน้าผู้อื่นได้อย่างมั่นใจ</p>
             </article>
             <article class="skill-card">
               <div class="skill-card__head">
-                <span class="skill-card__icon"><i class="ri-angularjs-fill" aria-hidden="true"></i></span>
+                <span class="skill-card__icon"><i class="ri-team-line" aria-hidden="true"></i></span>
                 <span class="skill-card__index">05</span>
               </div>
-              <div class="skill-card__info"><h3>Angular</h3><span>89%</span></div>
-              <div class="skill-card__bar" role="img" aria-label="ระดับ 89%">
-                <span style="--level: 89%"></span>
-              </div>
+              <div class="skill-card__info"><h3>ทักษะการเป็นผู้นำ</h3><span>ระดับสูง</span></div>
+              <p class="skill-card__description">มีความคิดริเริ่ม กล้ารับผิดชอบและนำทีม ช่วยวางแนวทาง แบ่งงาน และสนับสนุนให้ทีมไปถึงเป้าหมายร่วมกัน</p>
             </article>
             <article class="skill-card">
               <div class="skill-card__head">
-                <span class="skill-card__icon"><i class="ri-database-line" aria-hidden="true"></i></span>
+                <span class="skill-card__icon"><i class="ri-sparkling-line" aria-hidden="true"></i></span>
                 <span class="skill-card__index">06</span>
               </div>
-              <div class="skill-card__info"><h3>SQL</h3><span>89%</span></div>
-              <div class="skill-card__bar" role="img" aria-label="ระดับ 89%">
-                <span style="--level: 89%"></span>
-              </div>
+              <div class="skill-card__info"><h3>ทักษะการใช้ AI</h3><span>ระดับกลาง</span></div>
+              <p class="skill-card__description">ใช้เครื่องมือ AI ช่วยค้นคว้า ระดมไอเดีย และสนับสนุนการทำงาน พร้อมตรวจสอบความถูกต้องของข้อมูลก่อนนำไปใช้</p>
             </article>
           </div>
         </div>
@@ -290,51 +256,66 @@
         <div class="container">
           <div class="section-heading section-heading--wide">
             <div>
-              <p class="section-heading__index">04 / สิ่งที่สร้าง</p>
-              <h2 class="section__title">พื้นที่แสดงผลงาน</h2>
+              <p class="section-heading__index">04 / ผลงาน</p>
+              <h2 class="section__title">พื้นที่แสดงผลงาน<br />และรางวัล</h2>
             </div>
             <p class="section-heading__aside">
-              เพิ่มรายละเอียดจริง รูปภาพ<br />และลิงก์ของแต่ละโปรเจกต์ได้ที่นี่
+              คลิกข้อความเพื่อแก้ไข หรือเลือกรูป<br />ระบบบันทึกข้อมูลไว้ในเบราว์เซอร์
             </p>
           </div>
 
           <div class="projects__list">
-            <article class="project-card">
+            <article class="project-card" data-project="1">
               <span class="project-card__number">01</span>
               <div class="project-card__visual">
                 <i class="ri-code-s-slash-line" aria-hidden="true"></i>
+                <img class="project-card__image" alt="ภาพผลงานเว็บไซต์" hidden />
+                <label class="image-upload project-card__upload">
+                  <i class="ri-image-add-line" aria-hidden="true"></i> เลือกรูป
+                  <input class="project-image-upload" type="file" accept="image/*" />
+                </label>
               </div>
               <div class="project-card__body">
-                <p class="project-card__type">WEB APP / FRONTEND</p>
-                <h3>ผลงานเว็บไซต์</h3>
-                <p>เพิ่มภาพ รายละเอียด และลิงก์ของเว็บไซต์ที่ต้องการนำเสนอ</p>
-                <span class="tag">Web App</span>
+                <p class="project-card__type" contenteditable="true" spellcheck="false">WEB APP / FRONTEND</p>
+                <h3 contenteditable="true">ผลงานเว็บไซต์</h3>
+                <p class="project-card__description" contenteditable="true">เพิ่มรายละเอียดเว็บไซต์ที่ต้องการนำเสนอ หรือแก้ไขข้อความนี้</p>
+                <span class="tag" contenteditable="true">Web App</span>
               </div>
               <span class="project-card__arrow" aria-hidden="true">↗</span>
             </article>
-            <article class="project-card">
+            <article class="project-card" data-project="2">
               <span class="project-card__number">02</span>
               <div class="project-card__visual project-card__visual--blue">
                 <i class="ri-database-2-line" aria-hidden="true"></i>
+                <img class="project-card__image" alt="ภาพผลงานฐานข้อมูล" hidden />
+                <label class="image-upload project-card__upload">
+                  <i class="ri-image-add-line" aria-hidden="true"></i> เลือกรูป
+                  <input class="project-image-upload" type="file" accept="image/*" />
+                </label>
               </div>
               <div class="project-card__body">
-                <p class="project-card__type">DATABASE / API</p>
-                <h3>ผลงานฐานข้อมูล</h3>
-                <p>เพิ่มรายละเอียดโปรเจกต์ที่เกี่ยวข้องกับฐานข้อมูลหรือ API</p>
-                <span class="tag">Database</span>
+                <p class="project-card__type" contenteditable="true" spellcheck="false">DATABASE / API</p>
+                <h3 contenteditable="true">ผลงานฐานข้อมูล</h3>
+                <p class="project-card__description" contenteditable="true">เพิ่มรายละเอียดผลงานที่เกี่ยวข้องกับฐานข้อมูลหรือ API</p>
+                <span class="tag" contenteditable="true">Database</span>
               </div>
               <span class="project-card__arrow" aria-hidden="true">↗</span>
             </article>
-            <article class="project-card">
+            <article class="project-card" data-project="3">
               <span class="project-card__number">03</span>
               <div class="project-card__visual project-card__visual--gold">
                 <i class="ri-smartphone-line" aria-hidden="true"></i>
+                <img class="project-card__image" alt="ภาพผลงานแอปพลิเคชัน" hidden />
+                <label class="image-upload project-card__upload">
+                  <i class="ri-image-add-line" aria-hidden="true"></i> เลือกรูป
+                  <input class="project-image-upload" type="file" accept="image/*" />
+                </label>
               </div>
               <div class="project-card__body">
-                <p class="project-card__type">MOBILE / APPLICATION</p>
-                <h3>ผลงานแอปพลิเคชัน</h3>
-                <p>เพิ่มภาพและรายละเอียดแอปพลิเคชันที่ต้องการแสดง</p>
-                <span class="tag">Application</span>
+                <p class="project-card__type" contenteditable="true" spellcheck="false">MOBILE / APPLICATION</p>
+                <h3 contenteditable="true">ผลงานแอปพลิเคชัน</h3>
+                <p class="project-card__description" contenteditable="true">เพิ่มรายละเอียดแอปพลิเคชันที่ต้องการแสดง</p>
+                <span class="tag" contenteditable="true">Application</span>
               </div>
               <span class="project-card__arrow" aria-hidden="true">↗</span>
             </article>
@@ -347,10 +328,10 @@
           <div class="section-heading section-heading--wide">
             <div>
               <p class="section-heading__index">05 / ติดต่อ</p>
-              <h2 class="section__title">มีไอเดีย<br />มาคุยกัน</h2>
+              <h2 class="section__title">สนใจติดต่อ</h2>
             </div>
             <p class="section-heading__aside">
-              แก้ไขข้อมูลติดต่อและลิงก์<br />ให้เป็นของคุณก่อนเผยแพร่เว็บไซต์
+              ยินดีรับงานและพูดคุย<br />เกี่ยวกับโอกาสในการทำงานร่วมกัน
             </p>
           </div>
 
@@ -358,14 +339,14 @@
             <div class="contact__intro">
               <span class="contact__kicker">OPEN TO CONNECTIONS</span>
               <p>
-                สนใจพูดคุย แลกเปลี่ยนไอเดีย
-                หรือร่วมสร้างผลงานด้านเทคโนโลยี
+                สนใจติดต่อเรื่องงานหรือร่วมงาน
+                ยินดีพูดคุยและพร้อมสร้างสรรค์ผลงานไปด้วยกัน
               </p>
               <span class="contact__orbit" aria-hidden="true">↗</span>
             </div>
 
             <div class="contact__channels">
-              <div class="contact__channel">
+              <button class="contact__channel contact__channel--button" type="button" data-copy-email="pumrapee3262@gmail.com" aria-label="คัดลอกอีเมล pumrapee3262@gmail.com">
                 <span class="contact__channel-index">01</span>
                 <span class="contact__channel-icon">
                   <i class="ri-mail-line" aria-hidden="true"></i>
@@ -373,11 +354,11 @@
                 <div>
                   <span class="contact__channel-label">EMAIL</span>
                   <h3>อีเมล</h3>
-                  <p>เพิ่มอีเมลสำหรับติดต่อ</p>
+                  <p>pumrapee3262@gmail.com</p>
                 </div>
-                <span class="contact__channel-arrow" aria-hidden="true">↗</span>
-              </div>
-              <div class="contact__channel">
+                <span class="contact__channel-arrow" aria-hidden="true"><i class="ri-file-copy-line"></i></span>
+              </button>
+              <a class="contact__channel" href="https://github.com/Pumrapee1" target="_blank" rel="noopener noreferrer">
                 <span class="contact__channel-index">02</span>
                 <span class="contact__channel-icon">
                   <i class="ri-github-fill" aria-hidden="true"></i>
@@ -385,12 +366,18 @@
                 <div>
                   <span class="contact__channel-label">GITHUB</span>
                   <h3>GitHub</h3>
-                  <p>เพิ่มลิงก์โปรไฟล์ GitHub</p>
+                  <p>github.com/Pumrapee1</p>
                 </div>
                 <span class="contact__channel-arrow" aria-hidden="true">↗</span>
-              </div>
+              </a>
+              <a class="contact__channel" href="https://www.facebook.com/phoomrapee.wichayapatanakun" target="_blank" rel="noopener noreferrer">
+                <span class="contact__channel-index">03</span>
+                <span class="contact__channel-icon"><i class="ri-facebook-fill" aria-hidden="true"></i></span>
+                <div><span class="contact__channel-label">FACEBOOK</span><h3>Facebook</h3><p>ไปยังโปรไฟล์ Facebook</p></div>
+                <span class="contact__channel-arrow" aria-hidden="true">↗</span>
+              </a>
               <p class="contact__note">
-                ใส่ข้อมูลติดต่อจริงในส่วนนี้ได้เมื่อพร้อมเผยแพร่เว็บไซต์
+                <span id="contact-feedback" role="status" aria-live="polite">คลิกอีเมลเพื่อคัดลอกไปยังคลิปบอร์ด</span>
               </p>
             </div>
           </div>
@@ -402,13 +389,14 @@
       <div class="container footer__content">
         <a class="nav__logo" href="#home">
           <span class="nav__logo-mark">P</span>
-          <span class="nav__logo-copy">PORTFOLIO<small>WEB DEVELOPER</small></span>
+          <span class="nav__logo-copy">PORTFOLIO<small>PUMRAPEE</small></span>
         </a>
         <p>พอร์ตโฟลิโอแนะนำตัว · ทักษะ · ผลงาน</p>
         <a class="footer__top" href="#home">กลับไปด้านบน <i class="ri-arrow-up-line" aria-hidden="true"></i></a>
       </div>
     </footer>
 
+    <div class="site-feedback" id="site-feedback" role="status" aria-live="polite"></div>
     <script src="script.js"></script>
   </body>
 </html>
