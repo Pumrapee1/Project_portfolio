@@ -15,22 +15,15 @@ const showFeedback = (message, isError = false) => {
   }, 2800);
 };
 
-const storeValue = (key, value) => {
-  try {
-    localStorage.setItem(key, value);
-    return true;
-  } catch {
-    showFeedback("บันทึกข้อมูลไม่สำเร็จ พื้นที่จัดเก็บของเบราว์เซอร์อาจเต็ม", true);
-    return false;
-  }
-};
-
 const setTheme = (isDark) => {
   document.body.classList.toggle("dark-theme", isDark);
-  themeToggle.setAttribute("aria-label", isDark ? "เปิดโหมดสว่าง" : "เปิดโหมดมืด");
+  themeToggle.setAttribute(
+    "aria-label",
+    isDark ? "โหมดมืด ON สลับเป็นโหมดสว่าง" : "โหมดสว่าง OFF สลับเป็นโหมดมืด",
+  );
   themeToggle.innerHTML = isDark
-    ? '<i class="ri-sun-line" aria-hidden="true"></i>'
-    : '<i class="ri-moon-line" aria-hidden="true"></i>';
+    ? '<i class="ri-sun-line" aria-hidden="true"></i><span class="theme-toggle__label">DARK</span><strong class="theme-toggle__status">ON</strong>'
+    : '<i class="ri-moon-line" aria-hidden="true"></i><span class="theme-toggle__label">LIGHT</span><strong class="theme-toggle__status">OFF</strong>';
 };
 
 const savedTheme = localStorage.getItem("portfolio-theme");
@@ -85,95 +78,81 @@ const prefersReducedMotion = window.matchMedia(
   "(prefers-reduced-motion: reduce)",
 ).matches;
 
-const setUploadedImage = (image, icon, dataUrl) => {
-  image.src = dataUrl;
-  image.hidden = false;
-  image.dataset.savedImage = dataUrl;
-  icon.hidden = true;
-};
+document.querySelectorAll(".skill-card").forEach((card) => {
+  const skill = card.querySelector(".skill-card__info h3").textContent.trim();
+  const learnLink = card.querySelector(".skill-card__learn");
+  const query = encodeURIComponent(`${skill} คืออะไร ความสำคัญ`);
+  learnLink.href = `https://www.google.com/search?q=${query}`;
+  learnLink.setAttribute("aria-label", `ค้นหาข้อมูลเบื้องต้นและความสำคัญของ${skill}บน Google`);
+});
 
-const optimizeImage = (file, onReady) => {
-  if (!file.type.startsWith("image/")) {
-    showFeedback("กรุณาเลือกไฟล์รูปภาพ", true);
-    return;
-  }
-  if (file.size > 8 * 1024 * 1024) {
-    showFeedback("ไฟล์รูปมีขนาดใหญ่เกินไป (สูงสุด 8 MB)", true);
-    return;
-  }
+const projectCards = document.querySelectorAll(".project-card");
+const projectFilters = document.querySelectorAll(".projects__filter");
+const projectDialog = document.querySelector(".project-dialog");
+const dialogImage = projectDialog.querySelector(".project-dialog__image");
+const dialogVisual = projectDialog.querySelector(".project-dialog__visual");
+const dialogVideo = projectDialog.querySelector(".project-dialog__video");
 
-  const reader = new FileReader();
-  reader.onerror = () => showFeedback("อ่านไฟล์รูปไม่สำเร็จ กรุณาลองอีกครั้ง", true);
-  reader.onload = () => {
-    const source = new Image();
-    source.onerror = () => showFeedback("เปิดไฟล์รูปไม่สำเร็จ กรุณาเลือกไฟล์อื่น", true);
-    source.onload = () => {
-      const scale = Math.min(1, 1400 / Math.max(source.naturalWidth, source.naturalHeight));
-      const canvas = document.createElement("canvas");
-      canvas.width = Math.round(source.naturalWidth * scale);
-      canvas.height = Math.round(source.naturalHeight * scale);
-      canvas.getContext("2d").drawImage(source, 0, 0, canvas.width, canvas.height);
-      const dataUrl = canvas.toDataURL("image/webp", 0.8);
-
-      if (dataUrl.length > 2_000_000) {
-        showFeedback("รูปหลังปรับขนาดยังใหญ่เกินไป กรุณาเลือกไฟล์ที่เล็กลง", true);
-        return;
-      }
-      onReady(dataUrl);
-    };
-    source.src = reader.result;
-  };
-  reader.readAsDataURL(file);
-};
-
-document.querySelectorAll(".project-card").forEach((card) => {
-  const projectId = card.dataset.project;
-  const image = card.querySelector(".project-card__image");
-  const icon = card.querySelector(".project-card__visual > i");
-  const fields = card.querySelectorAll("[contenteditable='true']");
-  const storageKey = `portfolio-project-${projectId}`;
-  let savedProject;
-
-  try {
-    savedProject = JSON.parse(localStorage.getItem(storageKey) || "null");
-  } catch {
-    showFeedback(`ไม่สามารถอ่านข้อมูลผลงาน ${projectId} ที่บันทึกไว้ได้`, true);
-  }
-
-  if (savedProject && typeof savedProject === "object") {
-    if (Array.isArray(savedProject.text)) {
-      fields.forEach((field, index) => {
-        if (typeof savedProject.text[index] === "string") {
-          field.textContent = savedProject.text[index];
-        }
-      });
-    }
-    if (typeof savedProject.image === "string" && savedProject.image) {
-      setUploadedImage(image, icon, savedProject.image);
-    }
-  }
-
-  const saveProject = () => {
-    const projectData = {
-      text: Array.from(fields, (field) => field.textContent),
-      image: image.dataset.savedImage || "",
-    };
-    return storeValue(storageKey, JSON.stringify(projectData));
-  };
-
-  fields.forEach((field) => field.addEventListener("input", saveProject));
-  card.querySelector(".project-image-upload").addEventListener("change", (event) => {
-    const [file] = event.target.files;
-    if (!file) return;
-
-    optimizeImage(file, (dataUrl) => {
-      setUploadedImage(image, icon, dataUrl);
-      if (saveProject()) {
-        showFeedback("เพิ่มรูปผลงานแล้ว");
-      }
-    });
-    event.target.value = "";
+const setProjectCategory = (category) => {
+  projectFilters.forEach((filter) => {
+    const isActive = filter.dataset.projectFilter === category;
+    filter.classList.toggle("is-active", isActive);
+    filter.setAttribute("aria-pressed", String(isActive));
   });
+  projectCards.forEach((card) => {
+    card.hidden = card.dataset.projectCategory !== category;
+  });
+};
+
+projectFilters.forEach((filter) => {
+  filter.addEventListener("click", () => setProjectCategory(filter.dataset.projectFilter));
+});
+setProjectCategory("activities");
+
+const openProjectDetails = (card) => {
+  const title = card.dataset.projectTitle;
+  projectDialog.querySelector(".project-dialog__type").textContent = card.dataset.projectType || "";
+  projectDialog.querySelector("#project-dialog-title").textContent = title;
+  projectDialog.querySelector(".project-dialog__description").textContent =
+    card.dataset.projectDescription || "เตรียมเพิ่มรายละเอียดผลงาน";
+
+  if (card.dataset.projectImage) {
+    dialogImage.src = card.dataset.projectImage;
+    dialogImage.alt = title;
+    dialogImage.hidden = false;
+    dialogVisual.classList.remove("is-empty");
+  } else {
+    dialogImage.removeAttribute("src");
+    dialogImage.alt = "";
+    dialogImage.hidden = true;
+    dialogVisual.classList.add("is-empty");
+  }
+
+  if (card.dataset.projectVideo) {
+    dialogVideo.href = card.dataset.projectVideo;
+    dialogVideo.hidden = false;
+  } else {
+    dialogVideo.removeAttribute("href");
+    dialogVideo.hidden = true;
+  }
+
+  projectDialog.showModal();
+};
+
+projectCards.forEach((card) => {
+  card.addEventListener("click", () => openProjectDetails(card));
+  card.addEventListener("keydown", (event) => {
+    if (event.key !== "Enter" && event.key !== " ") return;
+    event.preventDefault();
+    openProjectDetails(card);
+  });
+});
+
+projectDialog.querySelector(".project-dialog__close").addEventListener("click", () => {
+  projectDialog.close();
+});
+projectDialog.addEventListener("click", (event) => {
+  if (event.target === projectDialog) projectDialog.close();
 });
 
 const emailButton = document.querySelector("[data-copy-email]");

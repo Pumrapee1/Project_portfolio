@@ -38,6 +38,17 @@
           <i class="ri-menu-line" aria-hidden="true"></i>
         </button>
 
+        <button
+          class="theme-toggle"
+          type="button"
+          aria-label="โหมดสว่าง OFF สลับเป็นโหมดมืด"
+          title="สลับโหมดสว่าง / มืด"
+        >
+          <i class="ri-moon-line" aria-hidden="true"></i>
+          <span class="theme-toggle__label">LIGHT</span>
+          <strong class="theme-toggle__status">OFF</strong>
+        </button>
+
         <div class="nav__menu" id="nav-menu">
           <p class="nav__caption">สำรวจเว็บไซต์</p>
           <ul class="nav__list">
@@ -69,15 +80,6 @@
           </ul>
 
           <div class="nav__bottom">
-            <button
-              class="theme-toggle"
-              type="button"
-              aria-label="เปิดโหมดมืด"
-              title="สลับธีม"
-            >
-              <i class="ri-moon-line" aria-hidden="true"></i>
-              <span>สลับธีม</span>
-            </button>
             <p class="nav__scroll-hint">เลื่อนลงเพื่อสำรวจ <span>↓</span></p>
           </div>
         </div>
@@ -202,6 +204,7 @@
               </div>
               <div class="skill-card__info"><h3>SQL</h3><span>ระดับกลาง</span></div>
               <p class="skill-card__description">ใช้คำสั่ง SELECT, WHERE, ORDER BY, JOIN และ GROUP BY เพื่อค้นหา กรอง และสรุปข้อมูล รวมถึงเข้าใจการเพิ่ม แก้ไข และลบข้อมูลเบื้องต้น</p>
+              <a class="skill-card__learn" target="_blank" rel="noopener noreferrer">ดูข้อมูลเบื้องต้น <i class="ri-arrow-up-right-line" aria-hidden="true"></i></a>
             </article>
             <article class="skill-card">
               <div class="skill-card__head">
@@ -210,6 +213,7 @@
               </div>
               <div class="skill-card__info"><h3>Python</h3><span>ระดับกลาง</span></div>
               <p class="skill-card__description">มีพื้นฐานตัวแปร ชนิดข้อมูล เงื่อนไข ลูป ฟังก์ชัน และโครงสร้างข้อมูล สามารถนำมาวางโครงสร้างและพัฒนาโปรแกรมเบื้องต้นได้</p>
+              <a class="skill-card__learn" target="_blank" rel="noopener noreferrer">ดูข้อมูลเบื้องต้น <i class="ri-arrow-up-right-line" aria-hidden="true"></i></a>
             </article>
             <article class="skill-card">
               <div class="skill-card__head">
@@ -218,6 +222,7 @@
               </div>
               <div class="skill-card__info"><h3>ดีไซน์ UX/UI</h3><span>ระดับสูง</span></div>
               <p class="skill-card__description">ออกแบบโปสเตอร์และงานกราฟิกได้ พร้อมคำนึงถึงการจัดวาง สี และความชัดเจน เพื่อให้สื่อสารกับผู้ชมได้ดี</p>
+              <a class="skill-card__learn" target="_blank" rel="noopener noreferrer">ดูข้อมูลเบื้องต้น <i class="ri-arrow-up-right-line" aria-hidden="true"></i></a>
             </article>
             <article class="skill-card">
               <div class="skill-card__head">
@@ -226,6 +231,7 @@
               </div>
               <div class="skill-card__info"><h3>ทักษะการพูด</h3><span>ระดับสูง</span></div>
               <p class="skill-card__description">กล้าพูด กล้าแสดงความคิดเห็น และสื่อสารหรือนำเสนอความคิดต่อหน้าผู้อื่นได้อย่างมั่นใจ</p>
+              <a class="skill-card__learn" target="_blank" rel="noopener noreferrer">ดูข้อมูลเบื้องต้น <i class="ri-arrow-up-right-line" aria-hidden="true"></i></a>
             </article>
             <article class="skill-card">
               <div class="skill-card__head">
@@ -234,6 +240,7 @@
               </div>
               <div class="skill-card__info"><h3>ทักษะการเป็นผู้นำ</h3><span>ระดับสูง</span></div>
               <p class="skill-card__description">มีความคิดริเริ่ม กล้ารับผิดชอบและนำทีม ช่วยวางแนวทาง แบ่งงาน และสนับสนุนให้ทีมไปถึงเป้าหมายร่วมกัน</p>
+              <a class="skill-card__learn" target="_blank" rel="noopener noreferrer">ดูข้อมูลเบื้องต้น <i class="ri-arrow-up-right-line" aria-hidden="true"></i></a>
             </article>
             <article class="skill-card">
               <div class="skill-card__head">
@@ -242,6 +249,7 @@
               </div>
               <div class="skill-card__info"><h3>ทักษะการใช้ AI</h3><span>ระดับกลาง</span></div>
               <p class="skill-card__description">ใช้เครื่องมือ AI ช่วยค้นคว้า ระดมไอเดีย และสนับสนุนการทำงาน พร้อมตรวจสอบความถูกต้องของข้อมูลก่อนนำไปใช้</p>
+              <a class="skill-card__learn" target="_blank" rel="noopener noreferrer">ดูข้อมูลเบื้องต้น <i class="ri-arrow-up-right-line" aria-hidden="true"></i></a>
             </article>
           </div>
         </div>
@@ -255,68 +263,114 @@
               <h2 class="section__title">พื้นที่แสดงผลงาน<br />และรางวัล</h2>
             </div>
             <p class="section-heading__aside">
-              คลิกข้อความเพื่อแก้ไข หรือเลือกรูป<br />ระบบบันทึกข้อมูลไว้ในเบราว์เซอร์
+              เลือกหมวดผลงาน<br />แล้วคลิกการ์ดเพื่อดูรายละเอียด
             </p>
           </div>
 
-          <div class="projects__list">
-            <article class="project-card" data-project="1">
+          <div class="projects__filters" role="group" aria-label="เลือกหมวดผลงาน">
+            <button class="projects__filter is-active" type="button" data-project-filter="activities" aria-pressed="true">
+              <i class="ri-award-line" aria-hidden="true"></i> กิจกรรม / ภาวะผู้นำ
+            </button>
+            <button class="projects__filter" type="button" data-project-filter="professional" aria-pressed="false">
+              <i class="ri-code-box-line" aria-hidden="true"></i> โปรเจกต์ / ทักษะวิชาชีพ
+            </button>
+          </div>
+
+          <div class="projects__grid">
+            <article class="project-card" tabindex="0" role="button" data-project-category="activities" data-project-image="asset/1.jpg" data-project-title="รับพระราชทานเกียรติบัตร" data-project-description="เข้าร่วมค่ายพัฒนาศักยภาพสมาชิกสู่ความเป็นหนึ่ง TO BE NUMBER ONE CAMP รุ่นที่ 31 และรับพระราชทานเกียรติบัตรต่อหน้าพระพักตร์ทูลกระหม่อมหญิงอุบลรัตนราชกัญญา สิริวัฒนาพรรณวดี" data-project-type="TO BE NUMBER ONE CAMP / รุ่นที่ 31">
               <span class="project-card__number">01</span>
               <div class="project-card__visual">
                 <i class="ri-award-line" aria-hidden="true"></i>
-                <img class="project-card__image" src="asset/1.jpg" alt="รับพระราชทานเกียรติบัตรจากการเข้าร่วม TO BE NUMBER ONE CAMP รุ่นที่ 31" />
-                <label class="image-upload project-card__upload">
-                  <i class="ri-image-add-line" aria-hidden="true"></i> เลือกรูป
-                  <input class="project-image-upload" type="file" accept="image/*" />
-                </label>
+                <img class="project-card__image" src="asset/1.jpg" alt="" />
               </div>
               <div class="project-card__body">
-                <p class="project-card__type" contenteditable="true" spellcheck="false">TO BE NUMBER ONE CAMP / รุ่นที่ 31</p>
-                <h3 contenteditable="true">รับพระราชทานเกียรติบัตร</h3>
-                <p class="project-card__description" contenteditable="true">เข้าร่วมค่ายพัฒนาศักยภาพสมาชิกสู่ความเป็นหนึ่ง TO BE NUMBER ONE CAMP รุ่นที่ 31 และรับพระราชทานเกียรติบัตรต่อหน้าพระพักตร์ทูลกระหม่อมหญิงอุบลรัตนราชกัญญา สิริวัฒนาพรรณวดี</p>
-                <span class="tag" contenteditable="true">เกียรติบัตร</span>
+                <p class="project-card__type">TO BE NUMBER ONE CAMP / รุ่นที่ 31</p>
+                <h3>รับพระราชทานเกียรติบัตร</h3>
+                <p class="project-card__description">เข้าร่วมค่ายพัฒนาศักยภาพสมาชิกสู่ความเป็นหนึ่ง TO BE NUMBER ONE CAMP รุ่นที่ 31 และรับพระราชทานเกียรติบัตร</p>
+                <span class="tag">เกียรติบัตร</span>
               </div>
               <span class="project-card__arrow" aria-hidden="true">↗</span>
             </article>
-            <article class="project-card" data-project="2">
+            <article class="project-card" tabindex="0" role="button" data-project-category="activities" data-project-image="asset/2.jpg" data-project-title="รางวัลเยาวชนดีเด่น จังหวัดเชียงใหม่" data-project-description="เข้ารับรางวัลเยาวชนดีเด่น จังหวัดเชียงใหม่ ประจำปี 2569 สาขาพัฒนาเยาวชน บำเพ็ญประโยชน์ และส่งเสริมการมีส่วนร่วมของเด็กและเยาวชน" data-project-type="เยาวชนดีเด่น / จังหวัดเชียงใหม่ / 2569">
               <span class="project-card__number">02</span>
               <div class="project-card__visual project-card__visual--blue">
                 <i class="ri-award-line" aria-hidden="true"></i>
-                <img class="project-card__image" src="asset/2.jpg" alt="รับรางวัลเยาวชนดีเด่น จังหวัดเชียงใหม่ ประจำปี 2569" />
-                <label class="image-upload project-card__upload">
-                  <i class="ri-image-add-line" aria-hidden="true"></i> เลือกรูป
-                  <input class="project-image-upload" type="file" accept="image/*" />
-                </label>
+                <img class="project-card__image" src="asset/2.jpg" alt="" />
               </div>
               <div class="project-card__body">
-                <p class="project-card__type" contenteditable="true" spellcheck="false">เยาวชนดีเด่น / จังหวัดเชียงใหม่ / 2569</p>
-                <h3 contenteditable="true">รางวัลเยาวชนดีเด่น จังหวัดเชียงใหม่</h3>
-                <p class="project-card__description" contenteditable="true">เข้ารับรางวัลเยาวชนดีเด่น จังหวัดเชียงใหม่ ประจำปี 2569 สาขาพัฒนาเยาวชน บำเพ็ญประโยชน์ และส่งเสริมการมีส่วนร่วมของเด็กและเยาวชน</p>
-                <span class="tag" contenteditable="true">พัฒนาเยาวชน</span>
+                <p class="project-card__type">เยาวชนดีเด่น / จังหวัดเชียงใหม่ / 2569</p>
+                <h3>รางวัลเยาวชนดีเด่น จังหวัดเชียงใหม่</h3>
+                <p class="project-card__description">เข้ารับรางวัลเยาวชนดีเด่น จังหวัดเชียงใหม่ ประจำปี 2569 สาขาพัฒนาเยาวชน บำเพ็ญประโยชน์ และส่งเสริมการมีส่วนร่วมของเด็กและเยาวชน</p>
+                <span class="tag">พัฒนาเยาวชน</span>
               </div>
               <span class="project-card__arrow" aria-hidden="true">↗</span>
             </article>
-            <article class="project-card" data-project="3">
+            <article class="project-card" tabindex="0" role="button" data-project-category="activities" data-project-image="asset/3.jpg" data-project-title="รางวัลเยาวชนดีเด่น จังหวัดเชียงใหม่" data-project-description="เข้ารับรางวัลเยาวชนดีเด่น จังหวัดเชียงใหม่ ประจำปี 2567 เนื่องในวันเยาวชนแห่งชาติ" data-project-type="เยาวชนดีเด่น / จังหวัดเชียงใหม่ / 2567">
               <span class="project-card__number">03</span>
               <div class="project-card__visual project-card__visual--gold">
                 <i class="ri-award-line" aria-hidden="true"></i>
-                <img class="project-card__image" src="asset/3.jpg" alt="รับรางวัลเยาวชนดีเด่น จังหวัดเชียงใหม่ ประจำปี 2567 เนื่องในวันเยาวชนแห่งชาติ" />
-                <label class="image-upload project-card__upload">
-                  <i class="ri-image-add-line" aria-hidden="true"></i> เลือกรูป
-                  <input class="project-image-upload" type="file" accept="image/*" />
-                </label>
+                <img class="project-card__image" src="asset/3.jpg" alt="" />
               </div>
               <div class="project-card__body">
-                <p class="project-card__type" contenteditable="true" spellcheck="false">เยาวชนดีเด่น / จังหวัดเชียงใหม่ / 2567</p>
-                <h3 contenteditable="true">รางวัลเยาวชนดีเด่น จังหวัดเชียงใหม่</h3>
-                <p class="project-card__description" contenteditable="true">เข้ารับรางวัลเยาวชนดีเด่น จังหวัดเชียงใหม่ ประจำปี 2567 เนื่องในวันเยาวชนแห่งชาติ</p>
-                <span class="tag" contenteditable="true">วันเยาวชนแห่งชาติ</span>
+                <p class="project-card__type">เยาวชนดีเด่น / จังหวัดเชียงใหม่ / 2567</p>
+                <h3>รางวัลเยาวชนดีเด่น จังหวัดเชียงใหม่</h3>
+                <p class="project-card__description">เข้ารับรางวัลเยาวชนดีเด่น จังหวัดเชียงใหม่ ประจำปี 2567 เนื่องในวันเยาวชนแห่งชาติ</p>
+                <span class="tag">วันเยาวชนแห่งชาติ</span>
               </div>
+              <span class="project-card__arrow" aria-hidden="true">↗</span>
+            </article>
+
+            <article class="project-card" tabindex="0" role="button" data-project-category="professional" data-project-image="asset/5.png" data-project-title="เว็บไซต์วัฒนธรรมจีน: อักษรพู่กันและจิตรกรรมจีน" data-project-type="โปรเจกต์เว็บไซต์ / วัฒนธรรมจีน" data-project-description="สร้างเว็บไซต์เกี่ยวกับอักษรพู่กันและจิตรกรรมจีน เพื่อเผยแพร่และกระจายความรู้ด้านวัฒนธรรมจีนในรูปแบบออนไลน์">
+              <span class="project-card__number">01</span>
+              <div class="project-card__visual"><i class="ri-brush-line" aria-hidden="true"></i><img class="project-card__image" src="asset/5.png" alt="" /></div>
+              <div class="project-card__body"><p class="project-card__type">โปรเจกต์เว็บไซต์ / วัฒนธรรมจีน</p><h3>อักษรพู่กันและจิตรกรรมจีน</h3><p class="project-card__description">เผยแพร่วัฒนธรรมจีนและศิลปะดั้งเดิมผ่านเว็บไซต์ออนไลน์</p><span class="tag">วัฒนธรรมออนไลน์</span></div>
+              <span class="project-card__arrow" aria-hidden="true">↗</span>
+            </article>
+            <article class="project-card" tabindex="0" role="button" data-project-category="professional" data-project-image="asset/6.png" data-project-title="เว็บไซต์วัฒนธรรมไทย" data-project-type="โปรเจกต์เว็บไซต์ / วัฒนธรรมไทย" data-project-description="สร้างเว็บไซต์นำเสนอวัฒนธรรมไทย ทั้งประเพณีและการแต่งกายประจำภูมิภาค เพื่อเรียนรู้และเผยแพร่ความเป็นไทยผ่านช่องทางออนไลน์">
+              <span class="project-card__number">02</span>
+              <div class="project-card__visual"><i class="ri-goblet-line" aria-hidden="true"></i><img class="project-card__image" src="asset/6.png" alt="" /></div>
+              <div class="project-card__body"><p class="project-card__type">โปรเจกต์เว็บไซต์ / วัฒนธรรมไทย</p><h3>ประเพณีและชุดประจำภาค</h3><p class="project-card__description">นำเสนอประเพณีและการแต่งกายของแต่ละภูมิภาคไทยผ่านเว็บไซต์</p><span class="tag">วัฒนธรรมไทย</span></div>
+              <span class="project-card__arrow" aria-hidden="true">↗</span>
+            </article>
+            <article class="project-card" tabindex="0" role="button" data-project-category="professional" data-project-image="asset/4.png" data-project-title="English Mastery" data-project-type="เว็บแอปเพื่อการเรียนรู้ภาษาอังกฤษ" data-project-description="สร้างเว็บแอป English Mastery สำหรับฝึกฝนและเรียนรู้ภาษาอังกฤษ รวมทั้งหมด 30 บทเรียน เพื่อส่งเสริมการเรียนรู้ด้วยตนเอง">
+              <span class="project-card__number">03</span>
+              <div class="project-card__visual"><i class="ri-translate-2" aria-hidden="true"></i><img class="project-card__image" src="asset/4.png" alt="" /></div>
+              <div class="project-card__body"><p class="project-card__type">เว็บแอปเพื่อการเรียนรู้ภาษาอังกฤษ</p><h3>English Mastery · 30 บทเรียน</h3><p class="project-card__description">โปรแกรมเรียนภาษาอังกฤษที่ออกแบบมาเพื่อฝึกฝนด้วยตนเอง</p><span class="tag">เว็บแอปการศึกษา</span></div>
+              <span class="project-card__arrow" aria-hidden="true">↗</span>
+            </article>
+            <article class="project-card" tabindex="0" role="button" data-project-category="professional" data-project-image="asset/7.jpg" data-project-title="เหรียญทอง: ทักษะการพัฒนาระบบประเมินบุคลากร" data-project-type="การแข่งขันทักษะวิชาชีพ / เหรียญทอง" data-project-description="ได้รับรางวัลเหรียญทองในการแข่งขันทักษะวิชาชีพ ประเภททักษะการพัฒนาระบบประเมินบุคลากร">
+              <span class="project-card__number">04</span>
+              <div class="project-card__visual"><i class="ri-medal-line" aria-hidden="true"></i><img class="project-card__image" src="asset/7.jpg" alt="" /></div>
+              <div class="project-card__body"><p class="project-card__type">การแข่งขันทักษะวิชาชีพ / เหรียญทอง</p><h3>ระบบประเมินบุคลากร</h3><p class="project-card__description">ได้รับรางวัลเหรียญทองจากการแข่งขันทักษะการพัฒนาระบบประเมินบุคลากร</p><span class="tag">รางวัลเหรียญทอง</span></div>
+              <span class="project-card__arrow" aria-hidden="true">↗</span>
+            </article>
+            <article class="project-card" tabindex="0" role="button" data-project-category="professional" data-project-image="asset/8.jpg" data-project-title="เหรียญทอง: การเขียนโปรแกรมภาษาคอมพิวเตอร์" data-project-type="การแข่งขันทักษะวิชาชีพ / สถานศึกษาเอกชนระดับชาติ" data-project-description="ได้รับรางวัลเหรียญทองในการแข่งขันทักษะวิชาชีพ ด้านการเขียนโปรแกรมภาษาคอมพิวเตอร์ ระดับสถานศึกษาเอกชนระดับชาติ">
+              <span class="project-card__number">05</span>
+              <div class="project-card__visual"><i class="ri-code-box-line" aria-hidden="true"></i><img class="project-card__image" src="asset/8.jpg" alt="" /></div>
+              <div class="project-card__body"><p class="project-card__type">การแข่งขันทักษะวิชาชีพ / สถานศึกษาเอกชนระดับชาติ</p><h3>การเขียนโปรแกรมภาษาคอมพิวเตอร์</h3><p class="project-card__description">ได้รับรางวัลเหรียญทองในการแข่งขันทักษะวิชาชีพระดับชาติ</p><span class="tag">รางวัลเหรียญทอง</span></div>
               <span class="project-card__arrow" aria-hidden="true">↗</span>
             </article>
           </div>
         </div>
       </section>
+
+      <dialog class="project-dialog" aria-labelledby="project-dialog-title">
+        <button class="project-dialog__close" type="button" aria-label="ปิดรายละเอียด"><i class="ri-close-line" aria-hidden="true"></i></button>
+        <div class="project-dialog__layout">
+          <div class="project-dialog__visual is-empty">
+            <img class="project-dialog__image" alt="" hidden />
+            <div class="project-dialog__placeholder"><i class="ri-image-line" aria-hidden="true"></i><span>เตรียมเพิ่มรูปภาพผลงาน</span></div>
+          </div>
+          <div class="project-dialog__body">
+            <p class="project-dialog__type"></p>
+            <h2 id="project-dialog-title"></h2>
+            <p class="project-dialog__description"></p>
+            <a class="project-dialog__video" target="_blank" rel="noopener noreferrer" hidden>
+              <i class="ri-youtube-line" aria-hidden="true"></i> ดูวิดีโอบน YouTube
+            </a>
+          </div>
+        </div>
+      </dialog>
 
       <section class="section contact-section" id="contact">
         <div class="container">
